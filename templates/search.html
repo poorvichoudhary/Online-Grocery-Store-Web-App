@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body style="background-image: url('/static/groceryy.jpg'); background-repeat: no-repeat; background-size: 990px 3280px; background-position: center;">
+    <h1>Search Results</h1>
+    <p>Showing results for: {{ search_option }} - {{ search_query }}</p>
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        {% for result in search_results %}
+            <tr>
+                <td>{{ result[0] }}</td>
+                <td>{{ result[1] }}</td>
+                <td>{{ result[2] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

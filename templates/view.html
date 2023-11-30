@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Cart</title>
+    <!-- Add your CSS stylesheets or use inline styles here -->
+</head>
+<body style="background-image: url('/static/groceryy.jpg'); background-repeat: no-repeat; background-size: 990px 3280px; background-position: center;">
+    <h1>View Cart</h1>
+    <table>
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total Amount</th>
+    </tr>
+    {% for category, products in lp %}
+        {% for product in products %}
+            <tr>
+                <td>{{ product[0] }}</td>
+                <td>{{ product[1] }}</td>
+                <td>{{ product[2] }}</td>
+                <td>{{ product[1] * product[2] }}</td>
+            </tr>
+        {% endfor %}
+    {% endfor %}
+</table>
+
+<p>Total: {{ total_sum }}</p>
+<form action="/place">
+    <input type="submit" name="place order" placeholder="place order">
+</form>
+
+<!--<table>-->
+<!--    <tr>-->
+<!--        <th>Product</th>-->
+<!--        <th>Quantity</th>-->
+<!--        <th>Price</th>-->
+<!--        <th>Total Amount</th>-->
+<!--    </tr>-->
+<!--    {% set total_sum = 0 %} {# Initialize a variable to store the total sum #}-->
+<!--    {% for category, products in lp %}-->
+<!--        {% for product in products %}-->
+<!--            <tr>-->
+<!--                <td>{{ product[0] }}</td>-->
+<!--                <td>{{ product[1] }}</td>-->
+<!--                <td>{{ product[2] }}</td>-->
+<!--                <td>{{ product[3] }}</td>-->
+<!--                <td>{{ product[1] * product[2] }}</td>-->
+<!--            </tr>-->
+<!--            {% set total_sum = total_sum + (product[1] * product[2]) %}-->
+<!--        {% endfor %}-->
+<!--    {% endfor %}-->
+<!--    <tr>-->
+<!--        <td colspan="4"><strong>Total Sum:</strong></td>-->
+<!--        <td>{{ total_sum }}</td>-->
+<!--    </tr>-->
+<!--</table>-->
+
+
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <th>Product</th>-->
+<!--            <th>Quantity</th>-->
+<!--            <th>Price</th>-->
+<!--            <th>Total Amount</th>-->
+<!--        </tr>-->
+<!--        {% for category, products in lp %}-->
+<!--            {% for product in products %}-->
+<!--                <tr>-->
+<!--                    <td>{{product[0]}}</td>-->
+<!--                    <td>{{ product[1] }}</td>-->
+<!--                    <td>{{ product[2] }}</td>-->
+<!--                    <td>{{ product[3] }}</td>-->
+<!--                    <td>{{product[1] * product[2]}}-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--            {% endfor %}-->
+<!--        {% endfor %}-->
+<!--    </table>-->
+
+</body>
+</html>

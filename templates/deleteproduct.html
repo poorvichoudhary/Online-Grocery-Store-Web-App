@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Product</title>
+</head>
+<body style="background-image: url('/static/groceryy.jpg'); background-repeat: no-repeat; background-size: 990px 3280px; background-position: center;">
+    <center>
+        <h4>FOR DELETING PRODUCT ENTER ITS ID</h4>
+        <form method="POST" onsubmit="return confirmDelete();">
+            <input type="text" name="pid" placeholder="pid"><br>
+            <input type="hidden" name="confirmation" id="confirmation" value="no"> <!-- Add a hidden input field -->
+            <input type="submit" name="submit" value="Delete Product">
+        </form>
+    </center>
+
+    <script>
+        function confirmDelete() {
+            // Display a confirmation popup to the user
+            var confirmation = confirm("Are you sure you want to delete this product?");
+            if (confirmation) {
+                // If the admin confirms, update the hidden input field and submit the form
+                document.getElementById("confirmation").value = "yes";
+                return true; // Allow form submission
+            } else {
+                // If the admin cancels, prevent form submission
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
+

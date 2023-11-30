@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Details</title>
+    <!-- Add your CSS stylesheets or use inline styles here -->
+</head>
+<body style="background-image: url('/static/groceryy.jpg'); background-repeat: no-repeat; background-size: 990px 3280px; background-position: center;">
+    <h1>Order Details</h1>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order[0] }}</td>
+                <td>{{ order[1] }}</td>
+                <td>{{ order[2] }}</td>
+                <td>{{ order[3] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<style>
+.block {
+  display: block;
+  width: 50%;
+  border: 5px solid black;
+  background-color: #077691;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.block:hover {
+  background-color: #ddd;
+  color: black;
+}
+</style>
+<style>
+.topnav {
+  overflow: none;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>category</title>
+</head>
+<body style="background-image: url('/static/groceryy.jpg'); background-repeat: no-repeat; background-size: 990px 3280px; background-position: center;">
+<center>
+    <div class="topnav">
+        <a href="/adminhome">Home</a>
+        <a href="/">Login</a>
+    </div>
+<h1> MANAGE CATEGORY</h1>
+<br><br>
+    <h2><a href="/addcategory"><button class="block">Add Categories</button></a></h2><br>
+    <h2> <a href="/deletecategory"><button class="block"> Delete Categories</button></a></h2><br>
+    <h2> <a href="/updatecategory"><button class="block"> Update Categories</button> </a></h2><br>
+    <h2><a href="/readcategory"><button class="block">See All Created Categories</button> </a></h2><br>
+</center>
+</body>
+</html>
